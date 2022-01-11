@@ -1,9 +1,11 @@
 <?php 
 
-    setcookie("teste", $v1, time() + (86400 * 30), "/");
+    if(isset($_POST['text1'])){
+        $v1 = $_POST['text1'];
+        setcookie("teste", $v1, time() + (86400 * 30), "/");
+    }
 
-    $v1 = $_GET['text1'];
-
+    
 ?>
 
 <html lang="en">
@@ -18,7 +20,7 @@
 <body>
     <h1>Cookies PHP</h1>
 
-    <form action="" method="get">
+    <form action="" method="post">
         <div>
             <input class="texto" type="text" name="text1" placeholder="Insira o texto">
         </div>

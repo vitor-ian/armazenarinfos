@@ -8,18 +8,17 @@
 
     <script type="text/javascript">
 
-        document.cookie = "teste = vitor; path=/"
-        document.cookie = "teste2 = vitor2; path=/"
-        document.cookie = "teste3 = vitor3; path=/"
-        document.cookie = "teste4 = vitor4; path=/"
+        //document.cookie = "teste = vitor; path=/";
 
         var todos_os_cookies = document.cookie;
+        
 
         function AssignValues()
         {
-            alert(todos_os_cookies);
+            var nome = document.getElementById("textojs").value;
+            document.cookie = "cookie="+nome+"; path=/";
         }
- 
+        
         
     </script>
 </head>
@@ -29,9 +28,13 @@
     <h1>Cookies JS</h1>
 
     <form class="form1" action="" method="get">
+
+        <div>
+            <input id="textojs" class="texto" type="text" name="text1" placeholder="Insira o texto">
+        </div>
         
         <div>
-            <input type="submit" name="submit" class="btn2" value="Ver Cookies" onClick="AssignValues()">
+            <input type="submit" name="submit" class="btn2" value="Criar Cookie" onClick="AssignValues()">
         </div>
         
     </form>
