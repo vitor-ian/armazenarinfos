@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+
+    <script type="text/javascript">
+        function AssignValues()
+        {
+        localStorage.setItem("text1", document.form1.text1.value);
+        localStorage.setItem("text2", document.form1.text2.value);
+        localStorage.setItem("text3", document.form1.text3.value);
+        }
+        
+        function Value1()
+        {
+        alert("O valor 1 é: " + localStorage.getItem("text1"));
+        }
+        
+        function Value2()
+        {
+        alert("O valor 2 é: " + localStorage.getItem("text2"));
+        }
+        
+        function Value3()
+        {
+        alert("O valor 3 é: " + localStorage.getItem("text3"));
+        }
+
+        function ShowLength()
+        {
+        alert("O total de itens em Storage é: " + localStorage.length);
+        }
+        function ClearStorage()
+        {
+        localStorage.clear();
+        alert("Limpo. Agora o total de itens em Storage é: " + localStorage.length);
+        }
+        </script>
+</head>
+
+
+<body>
+    <h1>Local Storage</h1>
+
+    <form name="form1">
+        <div>
+            <input class="texto" type="text" name="text1" placeholder="Insira o texto">
+            <input class="texto" type="text" name="text2" placeholder="Insira o texto">
+            <input class="texto" type="text" name="text3" placeholder="Insira o texto">
+        </div>
+        
+        <div>
+            <input class="btn2" type="button" value="Salvar Valores" onClick="AssignValues()">
+        </div>
+        
+        <div id="valores">
+            <input class="btn" type="button" value="Mostrar Valor 1" onClick="Value1()">
+            <input class="btn" type="button" value="Mostrar Valor 2" onClick="Value2()"> 
+            <input class="btn" type="button" value="Mostrar Valor 3" onClick="Value3()">
+        </div>
+
+        <div class="storage">
+            <input class="btn3" type="button" value="Itens Storage" onClick="ShowLength()">
+            <input class="btn3" type="button" value="Limpar Storage" onClick="ClearStorage()">
+        </div>
+        
+        
+    </form>
+
+
+        <style>
+            body{
+                height: 100vh;
+                background: rgb(0,155,255);
+                background: linear-gradient(0deg, rgba(0,155,255,1) 0%, rgba(45,245,253,1) 100%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                font-family: 'Roboto', sans-serif;
+            }
+
+            h1{
+                color: white;
+                font-size: 50px;
+                text-transform: uppercase;
+                margin: 50px;
+            }
+
+            * {
+                padding: 0px;
+                margin: 0px;
+                border: none;
+                box-sizing: border-box;
+            }
+
+            form{
+                background-color: white;
+                padding: 50px;
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                position: relative;
+            }
+
+            .texto{
+                padding: 20px 30px;
+                margin: 10px;
+                border: 1px solid rgb(213, 213, 213);
+                border-radius: 50px;
+                font-size: 20px;
+            }
+
+            .btn{
+                padding: 20px 30px;
+                margin: 10px;
+                border-radius: 50px;
+                font-size: 15px;
+                border: 2px solid rgb(0, 156, 254);
+                background-color: #fff;
+                color: rgb(0, 156, 254);
+                text-transform: uppercase;
+                transition: 0.5s ease;
+            }
+
+            .btn:hover{
+                background-color: rgb(0, 156, 254);
+                color: #fff;
+                cursor: pointer;
+            }
+
+            .btn2{
+                padding: 20px 30px;
+                margin: 10px;
+                border-radius: 50px;
+                font-size: 15px;
+                background-color: rgb(0, 215, 32);
+                color: white;
+                text-transform: uppercase;
+                transition: 0.5s ease;
+            }
+
+            .btn2:hover{
+                background-color: rgb(2, 172, 27);
+                cursor: pointer;
+            }
+
+            .btn3{
+                margin: 10px;
+                font-size: 15px;
+                color: white;
+                text-transform: uppercase;
+                transition: 0.5s ease;
+                background-color: transparent;
+                height: 40px;
+            }
+
+            .btn3:hover{
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+            #valores{
+                position: absolute;
+                bottom: -40px;
+            }
+            .storage{
+                position: fixed;
+                bottom: 20px;
+            }
+
+        </style>
+</body>
+</html>
